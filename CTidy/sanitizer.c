@@ -53,10 +53,10 @@ Node* dropScripts(TidyDocImpl* doc, Node* node) {
             TY_(RemoveNode)(node);
             TY_(FreeNode)(doc, node);
             node = next;
+        } else {
+            if (node->content)
+                dropScripts(doc, node->content);
         }
-        
-        if (node->content)
-            dropScripts(doc, node->content);
         
         node = next;
     }
