@@ -29,17 +29,17 @@
 //  authors and should not be interpreted as representing official policies, either expressed
 //  or implied, of toxicsoftware.com.
 
-#import "CTidy.h"
+#import "SanitizeTidy.h"
 #import "sanitizer.h"
 
-@interface CTidy ()
+@interface SanitizeTidy ()
 @end
 
 #pragma mark -
 
-@implementation CTidy
+@implementation SanitizeTidy
 
-+ (CTidy *)tidy
++ (SanitizeTidy *)tidy
 {
     return([[self alloc] init]);
 }

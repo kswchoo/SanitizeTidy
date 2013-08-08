@@ -40,10 +40,10 @@ typedef enum {
 	CTidyFormatXHTML,
 } CTidyFormat;
 
-@interface CTidy : NSObject {
+@interface SanitizeTidy : NSObject {
 }
 
-+ (CTidy *)tidy;
++ (SanitizeTidy *)tidy;
 
 - (NSString *)tidyString:(NSString *)inString inputFormat:(CTidyFormat)inInputFormat outputFormat:(CTidyFormat)inOutputFormat encoding:(NSString*)inEncoding sanitize:(BOOL)sanitize diagnostics:(NSString **)outDiagnostics error:(NSError **)outError;
 

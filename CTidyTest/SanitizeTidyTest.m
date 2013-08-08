@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Ignition Soft Limited. All rights reserved.
 //
 
-#import "CTidyTest.h"
-#import "CTidy.h"
+#import "SanitizeTidyTest.h"
+#import "SanitizeTidy.h"
 #import "sanitizer.h"
 
-@implementation CTidyTest
+@implementation SanitizeTidyTest
 
 - (void)setUp
 {
@@ -28,8 +28,8 @@
 
 - (void)testExample
 {
-    CTidy *ctidy = [[CTidy alloc] init];
-    NSString *path = [[NSBundle bundleWithIdentifier:@"kr.pe.kswchoo.CTidyTest"] pathForResource:@"example" ofType:@"html"];
+    SanitizeTidy *ctidy = [[SanitizeTidy alloc] init];
+    NSString *path = [[NSBundle bundleWithIdentifier:@"kr.pe.kswchoo.SanitizeTidyTest"] pathForResource:@"example" ofType:@"html"];
     
     
     NSString *originalHtml = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];

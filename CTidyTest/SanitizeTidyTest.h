@@ -8,6 +8,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface CTidyTest : SenTestCase
+@interface SanitizeTidyTest : SenTestCase
 
 @end
