@@ -62,6 +62,40 @@
 		5445E23A159324E600A3137D /* win32tc.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E206159324E600A3137D /* win32tc.c */; };
 		5445E23B159324E600A3137D /* win32tc.h in Headers */ = {isa = PBXBuildFile; fileRef = 5445E207159324E600A3137D /* win32tc.h */; };
 		5445E23D1593250100A3137D /* CTidy.h in Headers */ = {isa = PBXBuildFile; fileRef = 5445E1C31593248B00A3137D /* CTidy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE64606517B33B5F006ABA3F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE64606417B33B5F006ABA3F /* SenTestingKit.framework */; };
+		FE64606717B33B60006ABA3F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE64606617B33B5F006ABA3F /* Cocoa.framework */; };
+		FE64607117B33B60006ABA3F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE64606F17B33B60006ABA3F /* InfoPlist.strings */; };
+		FE64607417B33B60006ABA3F /* CTidyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE64607317B33B60006ABA3F /* CTidyTest.m */; };
+		FE64607917B33D84006ABA3F /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1C41593248B00A3137D /* CTidy.m */; };
+		FE64607A17B33DA9006ABA3F /* access.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1D8159324E600A3137D /* access.c */; };
+		FE64607B17B33DA9006ABA3F /* alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1DA159324E600A3137D /* alloc.c */; };
+		FE64607C17B33DA9006ABA3F /* attrask.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1DB159324E600A3137D /* attrask.c */; };
+		FE64607D17B33DA9006ABA3F /* attrdict.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1DC159324E600A3137D /* attrdict.c */; };
+		FE64607E17B33DA9006ABA3F /* attrget.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1DE159324E600A3137D /* attrget.c */; };
+		FE64607F17B33DA9006ABA3F /* attrs.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1DF159324E600A3137D /* attrs.c */; };
+		FE64608017B33DA9006ABA3F /* buffio.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1E1159324E600A3137D /* buffio.c */; };
+		FE64608117B33DA9006ABA3F /* charsets.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1E2159324E600A3137D /* charsets.c */; };
+		FE64608217B33DA9006ABA3F /* clean.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1E4159324E600A3137D /* clean.c */; };
+		FE64608317B33DA9006ABA3F /* config.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1E6159324E600A3137D /* config.c */; };
+		FE64608417B33DA9006ABA3F /* entities.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1E8159324E600A3137D /* entities.c */; };
+		FE64608517B33DA9006ABA3F /* fileio.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1EA159324E600A3137D /* fileio.c */; };
+		FE64608617B33DA9006ABA3F /* iconvtc.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1ED159324E600A3137D /* iconvtc.c */; };
+		FE64608717B33DA9006ABA3F /* istack.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1EF159324E600A3137D /* istack.c */; };
+		FE64608817B33DA9006ABA3F /* lexer.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1F0159324E600A3137D /* lexer.c */; };
+		FE64608917B33DA9006ABA3F /* localize.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1F2159324E600A3137D /* localize.c */; };
+		FE64608A17B33DA9006ABA3F /* mappedio.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1F3159324E600A3137D /* mappedio.c */; };
+		FE64608B17B33DA9006ABA3F /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1F6159324E600A3137D /* parser.c */; };
+		FE64608C17B33DA9006ABA3F /* pprint.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1F8159324E600A3137D /* pprint.c */; };
+		FE64608D17B33DA9006ABA3F /* streamio.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1FA159324E600A3137D /* streamio.c */; };
+		FE64608E17B33DA9006ABA3F /* tagask.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1FC159324E600A3137D /* tagask.c */; };
+		FE64608F17B33DA9006ABA3F /* tags.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1FD159324E600A3137D /* tags.c */; };
+		FE64609017B33DA9006ABA3F /* tidylib.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E200159324E600A3137D /* tidylib.c */; };
+		FE64609117B33DA9006ABA3F /* tmbstr.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E201159324E600A3137D /* tmbstr.c */; };
+		FE64609217B33DA9006ABA3F /* utf8.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E203159324E600A3137D /* utf8.c */; };
+		FE64609317B33DA9006ABA3F /* win32tc.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E206159324E600A3137D /* win32tc.c */; };
+		FE64609517B3404F006ABA3F /* example.html in Resources */ = {isa = PBXBuildFile; fileRef = FE64609417B3404F006ABA3F /* example.html */; };
+		FE64609B17B3503C006ABA3F /* sanitizer.c in Sources */ = {isa = PBXBuildFile; fileRef = FE64609A17B3503C006ABA3F /* sanitizer.c */; };
+		FE64609C17B35428006ABA3F /* sanitizer.c in Sources */ = {isa = PBXBuildFile; fileRef = FE64609A17B3503C006ABA3F /* sanitizer.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +156,20 @@
 		5445E205159324E600A3137D /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 		5445E206159324E600A3137D /* win32tc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = win32tc.c; sourceTree = "<group>"; };
 		5445E207159324E600A3137D /* win32tc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = win32tc.h; sourceTree = "<group>"; };
+		FE64606317B33B5F006ABA3F /* CTidyTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CTidyTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE64606417B33B5F006ABA3F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		FE64606617B33B5F006ABA3F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		FE64606917B33B60006ABA3F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		FE64606A17B33B60006ABA3F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FE64606B17B33B60006ABA3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FE64606E17B33B60006ABA3F /* CTidyTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CTidyTest-Info.plist"; sourceTree = "<group>"; };
+		FE64607017B33B60006ABA3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE64607217B33B60006ABA3F /* CTidyTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTidyTest.h; sourceTree = "<group>"; };
+		FE64607317B33B60006ABA3F /* CTidyTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTidyTest.m; sourceTree = "<group>"; };
+		FE64607517B33B60006ABA3F /* CTidyTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTidyTest-Prefix.pch"; sourceTree = "<group>"; };
+		FE64609417B3404F006ABA3F /* example.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = example.html; sourceTree = "<group>"; };
+		FE64609A17B3503C006ABA3F /* sanitizer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sanitizer.c; sourceTree = "<group>"; };
+		FE64609D17B354DA006ABA3F /* sanitizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sanitizer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +181,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FE64605F17B33B5F006ABA3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE64606517B33B5F006ABA3F /* SenTestingKit.framework in Frameworks */,
+				FE64606717B33B60006ABA3F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -140,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				5445E1C01593248A00A3137D /* CTidy */,
+				FE64606C17B33B60006ABA3F /* CTidyTest */,
 				5445E1BD1593248A00A3137D /* Frameworks */,
 				5445E1BC1593248A00A3137D /* Products */,
 			);
@@ -149,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				5445E1BB1593248A00A3137D /* libCTidy.a */,
+				FE64606317B33B5F006ABA3F /* CTidyTest.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +216,9 @@
 			isa = PBXGroup;
 			children = (
 				5445E1BE1593248A00A3137D /* Foundation.framework */,
+				FE64606417B33B5F006ABA3F /* SenTestingKit.framework */,
+				FE64606617B33B5F006ABA3F /* Cocoa.framework */,
+				FE64606817B33B60006ABA3F /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,6 +230,8 @@
 				5445E1C31593248B00A3137D /* CTidy.h */,
 				5445E1C41593248B00A3137D /* CTidy.m */,
 				5445E1C11593248A00A3137D /* Supporting Files */,
+				FE64609D17B354DA006ABA3F /* sanitizer.h */,
+				FE64609A17B3503C006ABA3F /* sanitizer.c */,
 			);
 			path = CTidy;
 			sourceTree = "<group>";
@@ -255,6 +319,37 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		FE64606817B33B60006ABA3F /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE64606917B33B60006ABA3F /* AppKit.framework */,
+				FE64606A17B33B60006ABA3F /* CoreData.framework */,
+				FE64606B17B33B60006ABA3F /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		FE64606C17B33B60006ABA3F /* CTidyTest */ = {
+			isa = PBXGroup;
+			children = (
+				FE64607217B33B60006ABA3F /* CTidyTest.h */,
+				FE64607317B33B60006ABA3F /* CTidyTest.m */,
+				FE64606D17B33B60006ABA3F /* Supporting Files */,
+				FE64609417B3404F006ABA3F /* example.html */,
+			);
+			path = CTidyTest;
+			sourceTree = "<group>";
+		};
+		FE64606D17B33B60006ABA3F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE64606E17B33B60006ABA3F /* CTidyTest-Info.plist */,
+				FE64606F17B33B60006ABA3F /* InfoPlist.strings */,
+				FE64607517B33B60006ABA3F /* CTidyTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -312,6 +407,24 @@
 			productReference = 5445E1BB1593248A00A3137D /* libCTidy.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		FE64606217B33B5F006ABA3F /* CTidyTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE64607817B33B60006ABA3F /* Build configuration list for PBXNativeTarget "CTidyTest" */;
+			buildPhases = (
+				FE64605E17B33B5F006ABA3F /* Sources */,
+				FE64605F17B33B5F006ABA3F /* Frameworks */,
+				FE64606017B33B5F006ABA3F /* Resources */,
+				FE64606117B33B5F006ABA3F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CTidyTest;
+			productName = CTidyTest;
+			productReference = FE64606317B33B5F006ABA3F /* CTidyTest.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -319,7 +432,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = "Ignition Soft Limited";
+				ORGANIZATIONNAME = "Kevin Sungwoo Choo";
 			};
 			buildConfigurationList = 5445E1B51593248A00A3137D /* Build configuration list for PBXProject "CTidy" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -334,9 +447,38 @@
 			projectRoot = "";
 			targets = (
 				5445E1BA1593248A00A3137D /* CTidy */,
+				FE64606217B33B5F006ABA3F /* CTidyTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE64606017B33B5F006ABA3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE64607117B33B60006ABA3F /* InfoPlist.strings in Resources */,
+				FE64609517B3404F006ABA3F /* example.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FE64606117B33B5F006ABA3F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5445E1B71593248A00A3137D /* Sources */ = {
@@ -370,10 +512,58 @@
 				5445E235159324E600A3137D /* tmbstr.c in Sources */,
 				5445E237159324E600A3137D /* utf8.c in Sources */,
 				5445E23A159324E600A3137D /* win32tc.c in Sources */,
+				FE64609B17B3503C006ABA3F /* sanitizer.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE64605E17B33B5F006ABA3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE64607417B33B60006ABA3F /* CTidyTest.m in Sources */,
+				FE64607917B33D84006ABA3F /* CTidy.m in Sources */,
+				FE64607A17B33DA9006ABA3F /* access.c in Sources */,
+				FE64607B17B33DA9006ABA3F /* alloc.c in Sources */,
+				FE64607C17B33DA9006ABA3F /* attrask.c in Sources */,
+				FE64607D17B33DA9006ABA3F /* attrdict.c in Sources */,
+				FE64607E17B33DA9006ABA3F /* attrget.c in Sources */,
+				FE64607F17B33DA9006ABA3F /* attrs.c in Sources */,
+				FE64608017B33DA9006ABA3F /* buffio.c in Sources */,
+				FE64608117B33DA9006ABA3F /* charsets.c in Sources */,
+				FE64608217B33DA9006ABA3F /* clean.c in Sources */,
+				FE64608317B33DA9006ABA3F /* config.c in Sources */,
+				FE64608417B33DA9006ABA3F /* entities.c in Sources */,
+				FE64608517B33DA9006ABA3F /* fileio.c in Sources */,
+				FE64608617B33DA9006ABA3F /* iconvtc.c in Sources */,
+				FE64608717B33DA9006ABA3F /* istack.c in Sources */,
+				FE64608817B33DA9006ABA3F /* lexer.c in Sources */,
+				FE64608917B33DA9006ABA3F /* localize.c in Sources */,
+				FE64608A17B33DA9006ABA3F /* mappedio.c in Sources */,
+				FE64608B17B33DA9006ABA3F /* parser.c in Sources */,
+				FE64608C17B33DA9006ABA3F /* pprint.c in Sources */,
+				FE64608D17B33DA9006ABA3F /* streamio.c in Sources */,
+				FE64608E17B33DA9006ABA3F /* tagask.c in Sources */,
+				FE64608F17B33DA9006ABA3F /* tags.c in Sources */,
+				FE64609017B33DA9006ABA3F /* tidylib.c in Sources */,
+				FE64609117B33DA9006ABA3F /* tmbstr.c in Sources */,
+				FE64609217B33DA9006ABA3F /* utf8.c in Sources */,
+				FE64609317B33DA9006ABA3F /* win32tc.c in Sources */,
+				FE64609C17B35428006ABA3F /* sanitizer.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FE64606F17B33B60006ABA3F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE64607017B33B60006ABA3F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5445E1C61593248B00A3137D /* Debug */ = {
@@ -442,6 +632,60 @@
 			};
 			name = Release;
 		};
+		FE64607617B33B60006ABA3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CTidyTest/CTidyTest-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "CTidyTest/CTidyTest-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FE64607717B33B60006ABA3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CTidyTest/CTidyTest-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "CTidyTest/CTidyTest-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -462,6 +706,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		FE64607817B33B60006ABA3F /* Build configuration list for PBXNativeTarget "CTidyTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE64607617B33B60006ABA3F /* Debug */,
+				FE64607717B33B60006ABA3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

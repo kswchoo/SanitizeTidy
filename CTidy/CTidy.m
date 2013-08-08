@@ -30,6 +30,7 @@
 //  or implied, of toxicsoftware.com.
 
 #import "CTidy.h"
+#import "sanitizer.h"
 
 @interface CTidy ()
 @end
@@ -140,7 +141,7 @@
     return(theOutput);
 }
 
-- (NSString *)tidyString:(NSString *)inString inputFormat:(CTidyFormat)inInputFormat outputFormat:(CTidyFormat)inOutputFormat encoding:(NSString*)inEncoding diagnostics:(NSString **)outDiagnostics error:(NSError **)outError
+- (NSString *)tidyString:(NSString *)inString inputFormat:(CTidyFormat)inInputFormat outputFormat:(CTidyFormat)inOutputFormat encoding:(NSString*)inEncoding sanitize:(BOOL)sanitize diagnostics:(NSString **)outDiagnostics error:(NSError **)outError
 {
     TidyDoc theTidyDocument = ig_tidyCreate();
     
@@ -201,6 +202,15 @@
         return(NULL);
 	}
     
+    if (sanitize) {
+        // Sanitize the data
+        theResultCode = ig_tidySanitize(theTidyDocument);
+        if (theResultCode < 0)
+        {
+            return(NULL);
+        }
+    }
+    
     //theResultCode = tidyRunDiagnostics(theTidyDocument);
     
     // 
@@ -229,8 +239,8 @@
     return(theString);
 }
 
-- (NSString *)tidyHTMLString:(NSString *)inString encoding:(NSString*)inEncoding error:(NSError **)outError {
-    return [self tidyString:inString inputFormat:CTidyFormatHTML outputFormat:CTidyFormatXHTML encoding:inEncoding diagnostics:nil error:outError];
+- (NSString *)tidyHTMLString:(NSString *)inString encoding:(NSString*)inEncoding sanitize:(BOOL)sanitize error:(NSError **)outError {
+    return [self tidyString:inString inputFormat:CTidyFormatHTML outputFormat:CTidyFormatXHTML encoding:inEncoding sanitize:sanitize diagnostics:nil error:outError];
 }
 
 @end
