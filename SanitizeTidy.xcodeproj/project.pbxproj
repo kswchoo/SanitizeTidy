@@ -233,8 +233,7 @@
 				FE64609A17B3503C006ABA3F /* sanitizer.c */,
 				5445E1C11593248A00A3137D /* Supporting Files */,
 			);
-			name = SanitizeTidy;
-			path = CTidy;
+			path = SanitizeTidy;
 			sourceTree = "<group>";
 		};
 		5445E1C11593248A00A3137D /* Supporting Files */ = {
@@ -338,8 +337,7 @@
 				FE64606D17B33B60006ABA3F /* Supporting Files */,
 				FE64609417B3404F006ABA3F /* example.html */,
 			);
-			name = SanitizeTidyTest;
-			path = CTidyTest;
+			path = SanitizeTidyTest;
 			sourceTree = "<group>";
 		};
 		FE64606D17B33B60006ABA3F /* Supporting Files */ = {
@@ -611,9 +609,9 @@
 		5445E1C91593248B00A3137D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/CTidy.dst;
+				DSTROOT = /tmp/SanitizeTidy.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CTidy/SanitizeTidy-Prefix.pch";
+				GCC_PREFIX_HEADER = "SanitizeTidy/SanitizeTidy-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = SanitizeTidy;
@@ -624,9 +622,9 @@
 		5445E1CA1593248B00A3137D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/CTidy.dst;
+				DSTROOT = /tmp/SanitizeTidy.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CTidy/SanitizeTidy-Prefix.pch";
+				GCC_PREFIX_HEADER = "SanitizeTidy/SanitizeTidy-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = SanitizeTidy;
@@ -650,9 +648,9 @@
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CTidyTest/SanitizeTidyTest-Prefix.pch";
+				GCC_PREFIX_HEADER = "SanitizeTidyTest/SanitizeTidyTest-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "CTidyTest/SanitizeTidyTest-Info.plist";
+				INFOPLIST_FILE = "SanitizeTidyTest/SanitizeTidyTest-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = SanitizeTidyTest;
@@ -678,9 +676,9 @@
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CTidyTest/SanitizeTidyTest-Prefix.pch";
+				GCC_PREFIX_HEADER = "SanitizeTidyTest/SanitizeTidyTest-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "CTidyTest/SanitizeTidyTest-Info.plist";
+				INFOPLIST_FILE = "SanitizeTidyTest/SanitizeTidyTest-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = SanitizeTidyTest;
 				SDKROOT = macosx;
