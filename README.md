@@ -1,6 +1,6 @@
 # CTidy
 
-Standalone CTidy library extracted from [TouchXML](https://github.com/TouchCode/TouchXML)
+Tidy library with sanitize functionality.
 
 ## Usage
 
@@ -10,6 +10,7 @@ Convert HTML data to valid XHTML:
 NSString* html = @"<html><body><br><br><p>Hello</p></body></html>";
 NSString* xhtml = [[CTidy tidy] tidyHTMLString:html
                                       encoding:@"UTF8"
+                                      sanitize:NO
                                          error:&error];
 NSLog(@"%@", xhtml);
 ````
@@ -33,34 +34,21 @@ Output:
 </html>
 ````
 
-## RubyMotion
+Convert HTML data to valid XHTML and perform Javascript sanitization:
 
-To use CTidy in RubyMotion, install following gem:
-
-    gem install motion-tidy
-
-Add following to your Rakefile:
-
-```ruby
-$:.unshift("/Library/RubyMotion/lib")
-require 'motion/project'
-require 'motion-cocoapods'
-require 'motion-tidy'
-
-Motion::Project::App.setup do |app|
-  app.name = 'sample' 
-
-  # Only needed if you have not already specifying a pods dependency
-  app.pods do
-    pod 'CTidy', '>= 0.2.0'
-  end
-end
-```
-
+````objc
+NSString* html = @"<html><body><br><br><p>Hello</p></body></html>";
+NSString* xhtml = [[CTidy tidy] tidyHTMLString:html
+                                      encoding:@"UTF8"
+                                      sanitize:YES
+                                         error:&error];
+NSLog(@"%@", xhtml);
+````
 
 ## Credit
 
 Based on [TouchXML](https://github.com/TouchCode/TouchXML)
+Forked from [CTidy](https://github.com/siuying/CTidy)
 
 ## License
 
