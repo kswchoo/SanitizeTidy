@@ -20,6 +20,7 @@
 
 int tidyDocSanitize( TidyDocImpl* doc );
 Node* dropScripts(TidyDocImpl* doc, Node* node);
+Node* dropIframe(TidyDocImpl* doc, Node* node);
 Node* dropJavascriptProps(TidyDocImpl* doc, Node* node);
 Node* dropHtmlEvents(TidyDocImpl* doc, Node* node);
 
@@ -36,6 +37,7 @@ int TIDY_CALL ig_tidySanitize( TidyDoc tdoc )
 int tidyDocSanitize( TidyDocImpl* doc )
 {
     dropScripts(doc, &doc->root);
+    dropIframe(doc, &doc->root);
     dropJavascriptProps(doc, &doc->root);
     dropHtmlEvents(doc, &doc->root);
     return 0;
@@ -49,6 +51,28 @@ Node* dropScripts(TidyDocImpl* doc, Node* node) {
         next = node->next;
         
         if (nodeIsSCRIPT(node))
+        {
+            TY_(RemoveNode)(node);
+            TY_(FreeNode)(doc, node);
+            node = next;
+        } else {
+            if (node->content)
+                dropScripts(doc, node->content);
+        }
+        
+        node = next;
+    }
+    return node;
+}
+
+Node* dropIframe(TidyDocImpl* doc, Node* node) {
+    Node* next;
+    
+    while (node)
+    {
+        next = node->next;
+        
+        if (nodeIsIFRAME(node))
         {
             TY_(RemoveNode)(node);
             TY_(FreeNode)(doc, node);
