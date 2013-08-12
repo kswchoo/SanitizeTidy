@@ -65,7 +65,7 @@
 		FE64606517B33B5F006ABA3F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE64606417B33B5F006ABA3F /* SenTestingKit.framework */; };
 		FE64606717B33B60006ABA3F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE64606617B33B5F006ABA3F /* Cocoa.framework */; };
 		FE64607117B33B60006ABA3F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE64606F17B33B60006ABA3F /* InfoPlist.strings */; };
-		FE64607417B33B60006ABA3F /* SanitizeTidyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE64607317B33B60006ABA3F /* SanitizeTidyTest.m */; };
+		FE64607417B33B60006ABA3F /* XSSTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE64607317B33B60006ABA3F /* XSSTest.m */; };
 		FE64607917B33D84006ABA3F /* SanitizeTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1C41593248B00A3137D /* SanitizeTidy.m */; };
 		FE64607A17B33DA9006ABA3F /* access.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1D8159324E600A3137D /* access.c */; };
 		FE64607B17B33DA9006ABA3F /* alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E1DA159324E600A3137D /* alloc.c */; };
@@ -93,7 +93,6 @@
 		FE64609117B33DA9006ABA3F /* tmbstr.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E201159324E600A3137D /* tmbstr.c */; };
 		FE64609217B33DA9006ABA3F /* utf8.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E203159324E600A3137D /* utf8.c */; };
 		FE64609317B33DA9006ABA3F /* win32tc.c in Sources */ = {isa = PBXBuildFile; fileRef = 5445E206159324E600A3137D /* win32tc.c */; };
-		FE64609517B3404F006ABA3F /* example.html in Resources */ = {isa = PBXBuildFile; fileRef = FE64609417B3404F006ABA3F /* example.html */; };
 		FE64609B17B3503C006ABA3F /* sanitizer.c in Sources */ = {isa = PBXBuildFile; fileRef = FE64609A17B3503C006ABA3F /* sanitizer.c */; };
 		FE64609C17B35428006ABA3F /* sanitizer.c in Sources */ = {isa = PBXBuildFile; fileRef = FE64609A17B3503C006ABA3F /* sanitizer.c */; };
 /* End PBXBuildFile section */
@@ -164,10 +163,9 @@
 		FE64606B17B33B60006ABA3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FE64606E17B33B60006ABA3F /* SanitizeTidyTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SanitizeTidyTest-Info.plist"; sourceTree = "<group>"; };
 		FE64607017B33B60006ABA3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FE64607217B33B60006ABA3F /* SanitizeTidyTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SanitizeTidyTest.h; sourceTree = "<group>"; };
-		FE64607317B33B60006ABA3F /* SanitizeTidyTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SanitizeTidyTest.m; sourceTree = "<group>"; };
+		FE64607217B33B60006ABA3F /* XSSTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSSTest.h; sourceTree = "<group>"; };
+		FE64607317B33B60006ABA3F /* XSSTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSSTest.m; sourceTree = "<group>"; };
 		FE64607517B33B60006ABA3F /* SanitizeTidyTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SanitizeTidyTest-Prefix.pch"; sourceTree = "<group>"; };
-		FE64609417B3404F006ABA3F /* example.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = example.html; sourceTree = "<group>"; };
 		FE64609A17B3503C006ABA3F /* sanitizer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sanitizer.c; sourceTree = "<group>"; };
 		FE64609D17B354DA006ABA3F /* sanitizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sanitizer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -332,10 +330,9 @@
 		FE64606C17B33B60006ABA3F /* SanitizeTidyTest */ = {
 			isa = PBXGroup;
 			children = (
-				FE64607217B33B60006ABA3F /* SanitizeTidyTest.h */,
-				FE64607317B33B60006ABA3F /* SanitizeTidyTest.m */,
+				FE64607217B33B60006ABA3F /* XSSTest.h */,
+				FE64607317B33B60006ABA3F /* XSSTest.m */,
 				FE64606D17B33B60006ABA3F /* Supporting Files */,
-				FE64609417B3404F006ABA3F /* example.html */,
 			);
 			path = SanitizeTidyTest;
 			sourceTree = "<group>";
@@ -458,7 +455,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE64607117B33B60006ABA3F /* InfoPlist.strings in Resources */,
-				FE64609517B3404F006ABA3F /* example.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE64607417B33B60006ABA3F /* SanitizeTidyTest.m in Sources */,
+				FE64607417B33B60006ABA3F /* XSSTest.m in Sources */,
 				FE64607917B33D84006ABA3F /* SanitizeTidy.m in Sources */,
 				FE64607A17B33DA9006ABA3F /* access.c in Sources */,
 				FE64607B17B33DA9006ABA3F /* alloc.c in Sources */,
@@ -714,6 +710,7 @@
 				FE64607717B33B60006ABA3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
