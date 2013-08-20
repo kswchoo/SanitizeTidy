@@ -21,8 +21,10 @@
 int tidyDocSanitize( TidyDocImpl* doc );
 Node* dropScripts(TidyDocImpl* doc, Node* node);
 Node* dropIframe(TidyDocImpl* doc, Node* node);
+Node* dropEmbed(TidyDocImpl* doc, Node* node);
 Node* dropJavascriptProps(TidyDocImpl* doc, Node* node);
 Node* dropHtmlEvents(TidyDocImpl* doc, Node* node);
+Node* dropDataProperties(TidyDocImpl* doc, Node* node);
 
 byte isContainsHtmlEvent(tmbstr string);
 
@@ -38,8 +40,10 @@ int tidyDocSanitize( TidyDocImpl* doc )
 {
     dropScripts(doc, &doc->root);
     dropIframe(doc, &doc->root);
+    dropEmbed(doc, &doc->root);
     dropJavascriptProps(doc, &doc->root);
     dropHtmlEvents(doc, &doc->root);
+    dropDataProperties(doc, &doc->root);
     return 0;
 }
 
@@ -80,6 +84,28 @@ Node* dropIframe(TidyDocImpl* doc, Node* node) {
         } else {
             if (node->content)
                 dropScripts(doc, node->content);
+        }
+        
+        node = next;
+    }
+    return node;
+}
+
+Node* dropEmbed(TidyDocImpl* doc, Node* node) {
+    Node* next;
+    
+    while (node)
+    {
+        next = node->next;
+        
+        if (nodeIsEMBED(node))
+        {
+            TY_(RemoveNode)(node);
+            TY_(FreeNode)(doc, node);
+            node = next;
+        } else {
+            if (node->content)
+                dropEmbed(doc, node->content);
         }
         
         node = next;
@@ -137,6 +163,41 @@ Node* dropHtmlEvents(TidyDocImpl* doc, Node* node) {
         
         if (node->content)
             dropHtmlEvents(doc, node->content);
+        
+        node = next;
+    }
+    return node;
+}
+
+Node* dropDataProperties(TidyDocImpl* doc, Node* node) {
+    Node* next;
+    AttVal* attr;
+    AttVal* attr_next;
+    
+    while (node)
+    {
+        next = node->next;
+        
+        attr = node->attributes;
+        while(attr) {
+            attr_next = attr->next;
+            
+            if (TY_(tmbsubstr)(attr->attribute, "src") ||
+                TY_(tmbsubstr)(attr->attribute, "data")) {
+                ctmbstr valuelower = TY_(tmbstrtolower)(attr->value);
+                ctmbstr data = TY_(tmbsubstr)(valuelower, "data:");
+                ctmbstr texthtml = TY_(tmbsubstr)(valuelower, "text/html");
+                
+                if (data || texthtml) {
+                    TY_(RemoveAttribute)(doc, node, attr);
+                }
+            }
+            
+            attr = attr_next;
+        }
+        
+        if (node->content)
+            dropDataProperties(doc, node->content);
         
         node = next;
     }
