@@ -83,7 +83,7 @@ Node* dropIframe(TidyDocImpl* doc, Node* node) {
             node = next;
         } else {
             if (node->content)
-                dropScripts(doc, node->content);
+                dropIframe(doc, node->content);
         }
         
         node = next;

@@ -164,9 +164,15 @@
 - (void)testDataImgSrc
 {
     NSString *result = [self doTidy:@"<img src=\"data:text/html;base64,PHNjcmlwdD5hbGVydCgnb2JqZWN0X3NjcmlwdF9hbGVydCcpPC9zY3JpcHQ+\" width=0 height=0> "];
-    NSLog(@"%@", result);
     STAssertEquals([result rangeOfString:@"script"].location, NSNotFound, @"Text/html");
 }
+
+- (void)testIFrame
+{
+    NSString *result = [self doTidy:@"<iframe src=\"http://www.daum.net/\">"];
+    STAssertEquals([result rangeOfString:@"iframe"].location, NSNotFound, @"iframe");
+}
+
 
 // TODO(kevin) : Add more and more test cases here...
 
