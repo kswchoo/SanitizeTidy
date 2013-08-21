@@ -173,6 +173,18 @@
     STAssertEquals([result rangeOfString:@"iframe"].location, NSNotFound, @"iframe");
 }
 
+- (void)testEmbedStrip
+{
+    NSString *result = [self doTidy:@"<embed src=\"http://www.naver.com/\" height=\"100\">"];
+    STAssertEquals([result rangeOfString:@"embed"].location, NSNotFound, @"testEmbedStrip");
+}
+
+- (void)testEmbedSrcStrip
+{
+    NSString *result = [self doTidy:@"<embed src=\"http://www.naver.com/\" height=\"100\">"];
+    STAssertEquals([result rangeOfString:@"src"].location, NSNotFound, @"testEmbedSrcStrip");
+}
+
 
 // TODO(kevin) : Add more and more test cases here...
 

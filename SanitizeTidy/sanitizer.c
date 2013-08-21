@@ -22,6 +22,7 @@ int tidyDocSanitize( TidyDocImpl* doc );
 Node* dropScripts(TidyDocImpl* doc, Node* node);
 Node* dropIframe(TidyDocImpl* doc, Node* node);
 Node* dropEmbed(TidyDocImpl* doc, Node* node);
+Node* dropEmbedSrc(TidyDocImpl* doc, Node* node);
 Node* dropJavascriptProps(TidyDocImpl* doc, Node* node);
 Node* dropHtmlEvents(TidyDocImpl* doc, Node* node);
 Node* dropDataProperties(TidyDocImpl* doc, Node* node);
@@ -40,7 +41,8 @@ int tidyDocSanitize( TidyDocImpl* doc )
 {
     dropScripts(doc, &doc->root);
     dropIframe(doc, &doc->root);
-    dropEmbed(doc, &doc->root);
+    //dropEmbed(doc, &doc->root);
+    dropEmbedSrc(doc, &doc->root);
     dropJavascriptProps(doc, &doc->root);
     dropHtmlEvents(doc, &doc->root);
     dropDataProperties(doc, &doc->root);
@@ -106,6 +108,39 @@ Node* dropEmbed(TidyDocImpl* doc, Node* node) {
         } else {
             if (node->content)
                 dropEmbed(doc, node->content);
+        }
+        
+        node = next;
+    }
+    return node;
+}
+
+Node* dropEmbedSrc(TidyDocImpl* doc, Node* node) {
+    Node* next;
+    AttVal* attr;
+    AttVal* attr_next;
+    
+    while (node)
+    {
+        next = node->next;
+        
+        if (nodeIsEMBED(node))
+        {
+            attr = node->attributes;
+            while(attr) {
+                attr_next = attr->next;
+                
+                // Strip all src properties
+                if (TY_(tmbsubstr)(attr->attribute, "src")) {
+                    TY_(RemoveAttribute)(doc, node, attr);
+                }
+                
+                attr = attr_next;
+            }
+            
+        } else {
+            if (node->content)
+                dropEmbedSrc(doc, node->content);
         }
         
         node = next;
