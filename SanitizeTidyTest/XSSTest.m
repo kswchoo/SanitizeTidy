@@ -173,16 +173,28 @@
     STAssertEquals([result rangeOfString:@"iframe"].location, NSNotFound, @"iframe");
 }
 
-- (void)testEmbedStrip
-{
-    NSString *result = [self doTidy:@"<embed src=\"http://www.naver.com/\" height=\"100\">"];
-    STAssertEquals([result rangeOfString:@"embed"].location, NSNotFound, @"testEmbedStrip");
-}
+//- (void)testEmbedStrip
+//{
+//    NSString *result = [self doTidy:@"<embed src=\"http://www.naver.com/\" height=\"100\">"];
+//    STAssertEquals([result rangeOfString:@"embed"].location, NSNotFound, @"testEmbedStrip");
+//}
 
 - (void)testEmbedSrcStrip
 {
     NSString *result = [self doTidy:@"<embed src=\"http://www.naver.com/\" height=\"100\">"];
     STAssertEquals([result rangeOfString:@"src"].location, NSNotFound, @"testEmbedSrcStrip");
+}
+
+- (void)testOnSomething
+{
+    NSString *result = [self doTidy:@"<embed onsomething=\"http://www.naver.com/\" height=\"100\">"];
+    STAssertEquals([result rangeOfString:@"onsomething"].location, NSNotFound, @"testOnSomething");
+}
+
+- (void)testFileUrl
+{
+    NSString *result = [self doTidy:@"<a href=\"file:///abc.txt\">"];
+    STAssertEquals([result rangeOfString:@"file:"].location, NSNotFound, @"testFileUrl");
 }
 
 

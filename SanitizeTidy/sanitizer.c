@@ -24,6 +24,7 @@ Node* dropIframe(TidyDocImpl* doc, Node* node);
 Node* dropEmbed(TidyDocImpl* doc, Node* node);
 Node* dropEmbedSrc(TidyDocImpl* doc, Node* node);
 Node* dropJavascriptProps(TidyDocImpl* doc, Node* node);
+Node* dropFileUrlProps(TidyDocImpl* doc, Node* node);
 Node* dropHtmlEvents(TidyDocImpl* doc, Node* node);
 Node* dropDataProperties(TidyDocImpl* doc, Node* node);
 
@@ -44,6 +45,7 @@ int tidyDocSanitize( TidyDocImpl* doc )
     //dropEmbed(doc, &doc->root);
     dropEmbedSrc(doc, &doc->root);
     dropJavascriptProps(doc, &doc->root);
+    dropFileUrlProps(doc, &doc->root);
     dropHtmlEvents(doc, &doc->root);
     dropDataProperties(doc, &doc->root);
     return 0;
@@ -161,7 +163,7 @@ Node* dropJavascriptProps(TidyDocImpl* doc, Node* node) {
         while(attr) {
             attr_next = attr->next;
             
-            if (TY_(tmbsubstr)(attr->value, "javascript")) {
+            if (TY_(tmbsubstr)(attr->value, "javascript:")) {
                 TY_(RemoveAttribute)(doc, node, attr);
             }
             
@@ -170,6 +172,34 @@ Node* dropJavascriptProps(TidyDocImpl* doc, Node* node) {
         
         if (node->content)
             dropJavascriptProps(doc, node->content);
+        
+        node = next;
+    }
+    return node;
+}
+
+Node* dropFileUrlProps(TidyDocImpl* doc, Node* node) {
+    Node* next;
+    AttVal* attr;
+    AttVal* attr_next;
+    
+    while (node)
+    {
+        next = node->next;
+        
+        attr = node->attributes;
+        while(attr) {
+            attr_next = attr->next;
+            
+            if (TY_(tmbsubstr)(attr->value, "file:")) {
+                TY_(RemoveAttribute)(doc, node, attr);
+            }
+            
+            attr = attr_next;
+        }
+        
+        if (node->content)
+            dropFileUrlProps(doc, node->content);
         
         node = next;
     }
@@ -320,5 +350,8 @@ byte isContainsHtmlEvent(tmbstr string) {
         TY_(tmbsubstr)(string, "onsuspend") ||
         TY_(tmbsubstr)(string, "ontimeupdate") ||
         TY_(tmbsubstr)(string, "onvolumechange") ||
-        TY_(tmbsubstr)(string, "onwaiting");
+        TY_(tmbsubstr)(string, "onwaiting") ||
+    
+        // 2013-08-23 : Prevent all on* events
+        ((TY_(tmbstrlen)(string) >= 2) && (string[0]=='o' || string[0]=='O') && (string[1]=='n' || string[1]=='N'));
 }
