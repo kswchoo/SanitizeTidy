@@ -197,6 +197,13 @@
     STAssertEquals([result rangeOfString:@"file:"].location, NSNotFound, @"testFileUrl");
 }
 
+- (void)testCdata
+{
+    NSString *result = [self doTidy:@"<![CDATA[><img src=\"x\" onerror=\"alert(1)\">]]>"];
+    NSLog(@"%@", result);
+    STAssertEquals([result rangeOfString:@"alert"].location, NSNotFound, @"testCdata");
+}
+
 
 // TODO(kevin) : Add more and more test cases here...
 

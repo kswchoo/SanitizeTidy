@@ -22,6 +22,7 @@ int tidyDocSanitize( TidyDocImpl* doc );
 Node* dropScripts(TidyDocImpl* doc, Node* node);
 Node* dropIframe(TidyDocImpl* doc, Node* node);
 Node* dropEmbed(TidyDocImpl* doc, Node* node);
+Node* dropCdata(TidyDocImpl* doc, Node* node);
 Node* dropEmbedSrc(TidyDocImpl* doc, Node* node);
 Node* dropJavascriptProps(TidyDocImpl* doc, Node* node);
 Node* dropFileUrlProps(TidyDocImpl* doc, Node* node);
@@ -43,6 +44,7 @@ int tidyDocSanitize( TidyDocImpl* doc )
     dropScripts(doc, &doc->root);
     dropIframe(doc, &doc->root);
     //dropEmbed(doc, &doc->root);
+    dropCdata(doc, &doc->root);
     dropEmbedSrc(doc, &doc->root);
     dropJavascriptProps(doc, &doc->root);
     dropFileUrlProps(doc, &doc->root);
@@ -110,6 +112,28 @@ Node* dropEmbed(TidyDocImpl* doc, Node* node) {
         } else {
             if (node->content)
                 dropEmbed(doc, node->content);
+        }
+        
+        node = next;
+    }
+    return node;
+}
+
+Node* dropCdata(TidyDocImpl* doc, Node* node) {
+    Node* next;
+    
+    while (node)
+    {
+        next = node->next;
+        
+        if (node->type == TidyNode_CDATA)
+        {
+            TY_(RemoveNode)(node);
+            TY_(FreeNode)(doc, node);
+            node = next;
+        } else {
+            if (node->content)
+                dropCdata(doc, node->content);
         }
         
         node = next;
