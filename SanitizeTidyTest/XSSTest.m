@@ -204,6 +204,13 @@
     STAssertEquals([result rangeOfString:@"alert"].location, NSNotFound, @"testCdata");
 }
 
+- (void)testSrcCase
+{
+    NSString *result = [self doTidy:@"<img src=\"https://nametag.naver.com/02b84ePbNlMJwlR4AlA1A\">"];
+    NSLog(@"%@", result);
+    STAssertTrue([result rangeOfString:@"https://nametag.naver.com/02b84ePbNlMJwlR4AlA1A"].location != NSNotFound, @"testSrcCase");
+}
+
 
 // TODO(kevin) : Add more and more test cases here...
 

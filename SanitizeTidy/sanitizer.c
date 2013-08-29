@@ -273,9 +273,8 @@ Node* dropDataProperties(TidyDocImpl* doc, Node* node) {
             
             if (TY_(tmbsubstr)(attr->attribute, "src") ||
                 TY_(tmbsubstr)(attr->attribute, "data")) {
-                ctmbstr valuelower = TY_(tmbstrtolower)(attr->value);
-                ctmbstr data = TY_(tmbsubstr)(valuelower, "data:");
-                ctmbstr texthtml = TY_(tmbsubstr)(valuelower, "text/html");
+                ctmbstr data = TY_(tmbsubstr)(attr->value, "data:");
+                ctmbstr texthtml = TY_(tmbsubstr)(attr->value, "text/html");
                 
                 if (data || texthtml) {
                     TY_(RemoveAttribute)(doc, node, attr);
