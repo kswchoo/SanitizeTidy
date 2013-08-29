@@ -200,15 +200,20 @@
 - (void)testCdata
 {
     NSString *result = [self doTidy:@"<![CDATA[><img src=\"x\" onerror=\"alert(1)\">]]>"];
-    NSLog(@"%@", result);
     STAssertEquals([result rangeOfString:@"alert"].location, NSNotFound, @"testCdata");
 }
 
 - (void)testSrcCase
 {
     NSString *result = [self doTidy:@"<img src=\"https://nametag.naver.com/02b84ePbNlMJwlR4AlA1A\">"];
-    NSLog(@"%@", result);
     STAssertTrue([result rangeOfString:@"https://nametag.naver.com/02b84ePbNlMJwlR4AlA1A"].location != NSNotFound, @"testSrcCase");
+}
+
+- (void)testComment
+{
+    NSString *result = [self doTidy:@"<!--><img src=\"/\" onerror=\"eval(document.getElementById('ccc').value)\">-->"];
+    NSLog(@"%@", result);
+    STAssertTrue([result rangeOfString:@"eval"].location == NSNotFound, @"testComment");
 }
 
 
