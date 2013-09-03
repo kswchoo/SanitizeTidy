@@ -1,9 +1,10 @@
 //
 //  sanitizer.h
-//  CTidy
+//  SanitizeTidy
 //
 //  Created by Kevin on 8/8/13.
-//  Copyright (c) 2013 Kevin Sungwoo Choo. All rights reserved.
+//  Copyright (c) NAVER Corp. All rights reserved.
+//  Author(s) : Sungwoo Choo
 //
 
 #ifndef CTidy_sanitizer_h

@@ -3,7 +3,8 @@
 //  CTidy
 //
 //  Created by Kevin on 8/8/13.
-//  Copyright (c) 2013 Kevin Sungwoo Choo. All rights reserved.
+//  Copyright (c) 2013 NAVER Corp. All rights reserved.
+//  Author(s) : Sungwoo Choo
 //
 
 #include <stdio.h>
